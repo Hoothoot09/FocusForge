@@ -28,8 +28,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex flex-col h-full">
         <Header />
-        <Sidebar />
-        {children}
+        <div className="flex h-full">
+          <Sidebar />
+          {children}
+        </div>
       </body>
     </html>
   );
