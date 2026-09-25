@@ -8,97 +8,76 @@
 
 export default function TaskPage() {
   return (
-    <section>
-      <div>
-        <div>
-          <h2>Welcome back! user</h2> {/* Aqui terá o nome do usuário logado */}
-        </div>
+    <section className="w-full m-2">
+      <div className="flex items-center bg-[#171717] m-2 p-2 rounded-md">
+        <h2 className="text-md">Welcome back! user</h2>{" "}
+        {/* Aqui terá o nome do usuário logado */}
+      </div>
 
-        <div>
-          <div>
-            <div>
-              <p>Total Tasks </p>
-              <button>...</button>
+      <div className="grid grid-cols-2 grid-rows-1 gap-3">
+        <div className="grid grid-cols-2 grid-rows-2 w-[500px] h-[350px] gap-4">
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+            <div className="flex justify-between items-center">
+              <p className="text-lg">Total Tasks </p>
+              <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
+                <span className="absolute flex text-lg top-2.5">...</span>
+              </button>
             </div>
-            <span>0</span>
+            <span className="text-5xl font-bold">0</span>
             {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
-            <p>
-              <span>0%</span> increased from last week
+            <p className="text-sm">
+              <span className="bg-[#6B7280] p-1 rounded-md">0%</span> increased
+              from last week
             </p>
             {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
 
-          <div>
-            <div>
-              <div>
-                <p>Completed Tasks</p>
-                <button>...</button>
-              </div>
-              <span>0</span>
-              {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
-              <p>
-                <span>0%</span> increased from last week
-              </p>
-              {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+            <div className="flex justify-between items-center">
+              <p className="text-lg">Completed Tasks</p>
+              <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
+                <span className="absolute flex text-lg top-2.5">...</span>
+              </button>
             </div>
+            <span className="text-5xl font-bold">0</span>
+            {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
+            <p className="text-sm">
+              <span className="bg-[#6B7280] p-1 rounded-md">0%</span> increased
+              from last week
+            </p>
+            {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
 
-          <div>
-            <div>
-              <div>
-                <p>Pending Tasks</p>
-                <button>...</button>
-              </div>
-              <span>0</span>
-              {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
-              <p>
-                <span>0%</span> increased from last week
-              </p>
-              {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+            <div className="flex justify-between items-center">
+              <p className="text-lg">Pending Tasks</p>
+              <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
+                <span className="absolute flex text-lg top-2.5">...</span>
+              </button>
             </div>
+            <span className="text-5xl font-bold">0</span>
+            {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
+            <p className="text-sm">
+              <span className="bg-[#6B7280] p-1 rounded-md">0%</span> increased
+              from last week
+            </p>
+            {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
 
-          <div>
-            <div>
-              <div>
-                <p>Overdue Tasks</p>
-                <button>...</button>
-              </div>
-              <span>0</span>
-              {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
-              <p>
-                <span>0%</span> increased from last week
-              </p>
-              {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+            <div className="flex justify-between items-center">
+              <p className="text-lg">Overdue Tasks</p>
+              <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
+                <span className="absolute flex text-lg top-2.5">...</span>
+              </button>
             </div>
-          </div>
-
-          <div>
-            <h3>Task Distribution</h3>
-
-            <div>
-              <span></span> {/* layout da porcentagem */}
-              <span></span> {/* layout da porcentagem */}
-              <p>In Progress</p>
-              <span>0%</span>
-              <span></span> {/* layout de barra */}
-            </div>
-
-            <div>
-              <span></span> {/* layout da porcentagem */}
-              <span></span> {/* layout da porcentagem */}
-              <p>completed</p>
-              <span>0%</span>
-              <span></span> {/* layout de barra */}
-            </div>
-
-            <div>
-              <span></span> {/* layout da porcentagem */}
-              <span></span> {/* layout da porcentagem */}
-              <p>Overdue</p>
-              <span>0%</span>
-              <span></span> {/* layout de barra */}
-            </div>
+            <span className="text-5xl font-bold">0</span>
+            {/* Aplicar a lógica de contagem, por dia, semana, mês e ano */}
+            <p className="text-sm">
+              <span className="bg-[#6B7280] p-1 rounded-md">0%</span> increased
+              from last week
+            </p>
+            {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
         </div>
 
@@ -132,6 +111,34 @@ export default function TaskPage() {
               <span>Dec</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Task Distribution</h3>
+
+        <div>
+          <span></span> {/* layout da porcentagem */}
+          <span></span> {/* layout da porcentagem */}
+          <p>In Progress</p>
+          <span>0%</span>
+          <span></span> {/* layout de barra */}
+        </div>
+
+        <div>
+          <span></span> {/* layout da porcentagem */}
+          <span></span> {/* layout da porcentagem */}
+          <p>completed</p>
+          <span>0%</span>
+          <span></span> {/* layout de barra */}
+        </div>
+
+        <div>
+          <span></span> {/* layout da porcentagem */}
+          <span></span> {/* layout da porcentagem */}
+          <p>Overdue</p>
+          <span>0%</span>
+          <span></span> {/* layout de barra */}
         </div>
       </div>
 
