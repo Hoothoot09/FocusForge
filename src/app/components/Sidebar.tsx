@@ -12,7 +12,7 @@ export default function Sidebar() {
         </Link>
         <Link
           href="/tasks"
-          className="p-3 p-3 relative overflow-hidden rounded-lg before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-primary before:transition-all before:duration-500 before:content-[''] hover:before:w-full hover:text-white"
+          className="p-3 relative overflow-hidden rounded-lg before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-primary before:transition-all before:duration-500 before:content-[''] hover:before:w-full hover:text-white"
         >
           <span className="relative z-10">Tasks</span>
         </Link>
