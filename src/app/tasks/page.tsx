@@ -8,15 +8,15 @@
 
 export default function TaskPage() {
   return (
-    <section className="w-full m-2">
-      <div className="flex items-center bg-[#171717] m-2 p-2 rounded-md">
+    <section className="flex flex-col max-w-[1400px] m-2">
+      <div className="flex items-center bg-[#171717] m-2 p-2 border border-primary rounded-md">
         <h2 className="text-md">Welcome back! user</h2>{" "}
         {/* Aqui terá o nome do usuário logado */}
       </div>
 
-      <div className="grid grid-cols-2 grid-rows-1 gap-3">
+      <div className="grid grid-cols-2 grid-rows-1 h-full gap-7 p-2">
         <div className="grid grid-cols-2 grid-rows-2 w-[500px] h-[350px] gap-4">
-          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-primary p-2 gap-2 rounded-md">
             <div className="flex justify-between items-center">
               <p className="text-lg">Total Tasks </p>
               <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
@@ -32,7 +32,7 @@ export default function TaskPage() {
             {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
 
-          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-primary p-2 gap-2 rounded-md">
             <div className="flex justify-between items-center">
               <p className="text-lg">Completed Tasks</p>
               <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
@@ -48,7 +48,7 @@ export default function TaskPage() {
             {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
 
-          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-primary p-2 gap-2 rounded-md">
             <div className="flex justify-between items-center">
               <p className="text-lg">Pending Tasks</p>
               <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
@@ -64,7 +64,7 @@ export default function TaskPage() {
             {/* Aplicar a lógica de porcentagem, por semana, mês e ano */}
           </div>
 
-          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-[#6B7280] m-2 p-2 gap-2 rounded-md">
+          <div className="relative flex flex-col w-[250px] bg-[#171717] border border-primary p-2 gap-2 rounded-md">
             <div className="flex justify-between items-center">
               <p className="text-lg">Overdue Tasks</p>
               <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
@@ -81,35 +81,37 @@ export default function TaskPage() {
           </div>
         </div>
 
-        <div>
-          <div>
-            <h3>Task Priority</h3>
-            <button>...</button>
+        <div className="relative flex flex-col bg-[#171717] p-2 rounded-md border border-primary">
+          <div className="flex justify-between items-center mb-3">
+            <h3 className="text-lg font-semibold">Task Priority</h3>
+            <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
+              <span className="absolute flex text-lg top-2.5">...</span>
+            </button>
+          </div>
 
-            <div>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Jan</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Feb</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Mar</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>May</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Jun</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Jul</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Aug</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Sep</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Oct</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Nov</span>
-              <span></span> {/* layout d0 gráfico em barra */}
-              <span>Dec</span>
-            </div>
+          <div className="flex justify-center items-end h-full gap-2.5">
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Jan</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Feb</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Mar</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">May</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Jun</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Jul</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Aug</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Sep</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Oct</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Nov</span>
+            <span></span> {/* layout d0 gráfico em barra */}
+            <span className="text-sm">Dec</span>
           </div>
         </div>
       </div>
