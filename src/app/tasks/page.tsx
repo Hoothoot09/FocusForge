@@ -116,31 +116,38 @@ export default function TaskPage() {
         </div>
       </div>
 
-      <div>
-        <h3>Task Distribution</h3>
-
-        <div>
-          <span></span> {/* layout da porcentagem */}
-          <span></span> {/* layout da porcentagem */}
-          <p>In Progress</p>
-          <span>0%</span>
-          <span></span> {/* layout de barra */}
+      <div className="flex flex-col bg-[#171717] p-2 rounded-md border border-primary m-2">
+        <div className="relative flex justify-between items-center">
+          <p className="text-lg">Task Distribution</p>
+          <button className="flex justify-center items-center border border-[#6B7280] p-1 size-10 rounded-full cursor-pointer hover:bg-[#6B728030]">
+            <span className="absolute flex text-lg top-0.5">...</span>
+          </button>
         </div>
 
-        <div>
-          <span></span> {/* layout da porcentagem */}
-          <span></span> {/* layout da porcentagem */}
-          <p>completed</p>
-          <span>0%</span>
-          <span></span> {/* layout de barra */}
-        </div>
+        <div className="relative flex justify-center items-end gap-10 mt-4">
+          <div className="w-[300px] flex flex-col gap-2">
+            <span className="absolute top-1.5 left-2 w-3 h-3 bg-[#3B82F6] rounded-md"></span>
+            <span className="absolute top-3 left-3 w-1 h-25 bg-[#3B82F6] rounded-md"></span>
+            <p className="text-md ml-3">In Progress</p>
+            <span className="text-2xl ml-3">0%</span>
+            <div className="w-full h-10 bg-[#3B82F680] rounded-r-md"></div>
+          </div>
 
-        <div>
-          <span></span> {/* layout da porcentagem */}
-          <span></span> {/* layout da porcentagem */}
-          <p>Overdue</p>
-          <span>0%</span>
-          <span></span> {/* layout de barra */}
+          <div className="w-[300px] flex flex-col gap-2">
+            <span className="absolute top-1.5 left-87 w-3 h-3 bg-[#168A55] rounded-md"></span>
+            <span className="absolute top-3 left-88 w-1 h-25 bg-[#168A55] rounded-md"></span>
+            <p className="text-md ml-3">Completed</p>
+            <span className="text-2xl ml-3">0%</span>
+            <div className="w-full h-10 bg-[#168A5580] rounded-r-md"></div>
+          </div>
+
+          <div className="w-[300px] flex flex-col gap-2">
+            <span className="absolute top-1.5 left-172 w-3 h-3 bg-[#B91C1C] rounded-md"></span>
+            <span className="absolute top-3  left-173 w-1 h-25 bg-[#B91C1C] rounded-md"></span>
+            <p className="text-md ml-3">Overdue</p>
+            <span className="text-2xl ml-3">0%</span>
+            <div className="w-full h-10 bg-[#B91C1C80] rounded-r-md"></div>
+          </div>
         </div>
       </div>
 
