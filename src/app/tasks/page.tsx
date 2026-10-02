@@ -151,25 +151,30 @@ export default function TaskPage() {
         </div>
       </div>
 
-      <div>
-        <div>
-          <h3>Task List</h3>
-          <input type="search" placeholder="Search for tasks..." />
-          <button>All time</button>
-          <button>Week</button>
-          <button>Month</button>
-          <button>Year</button>
+      <div className="flex flex-col bg-[#171717] p-2 rounded-md border border-primary m-2">
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-lg">Task List</h3>
+          <input
+            className="bg-[#171717] w-[700px] border border-[#6B7280] p-1 placeholder:text-[#6B7280] focus:outline-none rounded-md"
+            type="search"
+            placeholder="Search for tasks..."
+          />
+          <button className="text-sm text-center bg-[#171717] border border-[#6B7280] p-1 rounded-md hover:bg-[#6B728030] cursor-pointer">
+            All time <span></span> {/* Aqui terá um ícone de seta para baixo */}
+          </button>
         </div>
 
-        <div>
-          <h4>Task name</h4>
-          <h4>Date</h4>
-          <h4>Due Date</h4>
-          <h4>Status</h4>
+        <div className="grid grid-cols-4 grid-rows-1 justify-center border border-[#6B7280] mb-2 rounded-md">
+          <h4 className="text-center font-bold">Task name</h4>
+          <h4 className="text-center font-bold">Date</h4>
+          <h4 className="text-center font-bold">Due Date</h4>
+          <h4 className="text-center font-bold">Status</h4>
         </div>
 
-        <div>
-          <button>Add task</button>
+        <div className="flex justify-center items-center h-[200px] border border-[#6B7280] rounded-md">
+          <button className="flex items-center text-sm text-center bg-[#171717] border border-[#6B7280] p-2 rounded-md hover:bg-[#6B728030] cursor-pointer">
+            Add task
+          </button>
         </div>
       </div>
     </section>
