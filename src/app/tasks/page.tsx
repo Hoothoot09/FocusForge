@@ -1,3 +1,4 @@
+import AddTaskModal from "../components/AddTaskModal";
 // Na parte de cima da página de task terá contadores para indicar quantas tasks estão em andamento, quantas foram concluídas e quantas estão no lixo.
 //
 //Abaixo irá ter um container onde mostrarar a porcentagem de progresso das tasks em andamento, que foram concluidas e que foram jogadas no lixo.
@@ -177,6 +178,8 @@ export default function TaskPage() {
           </button>
         </div>
       </div>
+
+      <AddTaskModal />
     </section>
   );
 }
