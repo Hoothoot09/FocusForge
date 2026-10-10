@@ -1,10 +1,23 @@
-export default function AddTaskModal() {
+type AddTaskModalProps = {
+  onClose: () => void;
+};
+
+export default function AddTaskModal({ onClose }: AddTaskModalProps) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="w-[750px] bg-[#171717] border border-primary p-2 rounded-xl">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
+    >
+      <div
+        onClick={(event) => event.stopPropagation()}
+        className="w-[750px] bg-[#171717] border border-primary p-2 rounded-xl z-100"
+      >
         <div className="flex justify-between items-center border-b border-[#3A3A3A] mr-4 ml-4 p-3">
           <h3 className="text-2xl">Add Task</h3>
-          <button className="text-gray-300 bg-[#303030] hover:bg-[#30303090] border border-[#454545] p-2 rounded-lg cursor-pointer">
+          <button
+            onClick={onClose}
+            className="text-gray-300 bg-[#303030] hover:bg-[#30303090] border border-[#454545] p-2 rounded-lg cursor-pointer"
+          >
             Close
           </button>
         </div>
@@ -46,10 +59,16 @@ export default function AddTaskModal() {
         </div>
 
         <div className="flex justify-end gap-4 p-4 mt-4">
-          <button className="bg-[#171717] hover:bg-[#30303090] border border-[#454545] p-2 rounded-lg cursor-pointer">
+          <button
+            onClick={onClose}
+            className="bg-[#171717] hover:bg-[#30303090] border border-[#454545] p-2 rounded-lg cursor-pointer"
+          >
             Cancel
           </button>
-          <button className="bg-primary hover:bg-primary/70 p-2 rounded-lg cursor-pointer">
+          <button
+            onClick={onClose}
+            className="bg-primary hover:bg-primary/70 p-2 rounded-lg cursor-pointer"
+          >
             Save Task
           </button>
         </div>
