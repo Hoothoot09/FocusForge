@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import AddTaskModal from "../components/AddTaskModal";
 // Na parte de cima da página de task terá contadores para indicar quantas tasks estão em andamento, quantas foram concluídas e quantas estão no lixo.
 //
@@ -8,6 +10,8 @@ import AddTaskModal from "../components/AddTaskModal";
 //Abaixo de todas essas informações terá uma tabela com todas as tasks, onde terá a opção de editar, excluir e concluir a task.
 
 export default function TaskPage() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   return (
     <section className="flex flex-col max-w-[1400px] m-2">
       <div className="flex items-center bg-[#171717] m-2 p-2 border border-primary rounded-md">
@@ -173,13 +177,15 @@ export default function TaskPage() {
         </div>
 
         <div className="flex justify-center items-center h-[200px] border border-[#6B7280] rounded-md">
-          <button className="flex items-center text-sm text-center bg-[#171717] border border-[#6B7280] p-2 rounded-md hover:bg-[#6B728030] cursor-pointer">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex items-center text-sm text-center bg-[#171717] border border-[#6B7280] p-2 rounded-md hover:bg-[#6B728030] cursor-pointer"
+          >
             Add task
           </button>
         </div>
+        {isModalOpen && <AddTaskModal onClose={() => setIsModalOpen(false)} />}
       </div>
-
-      <AddTaskModal />
     </section>
   );
 }
