@@ -1,6 +1,8 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import AddTaskModal from "../components/AddTaskModal";
+import type { Task } from "../types/task";
+
 // Na parte de cima da página de task terá contadores para indicar quantas tasks estão em andamento, quantas foram concluídas e quantas estão no lixo.
 //
 //Abaixo irá ter um container onde mostrarar a porcentagem de progresso das tasks em andamento, que foram concluidas e que foram jogadas no lixo.
@@ -10,7 +12,12 @@ import AddTaskModal from "../components/AddTaskModal";
 //Abaixo de todas essas informações terá uma tabela com todas as tasks, onde terá a opção de editar, excluir e concluir a task.
 
 export default function TaskPage() {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  function handleAddTask(newTask: Task) {
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  }
 
   return (
     <section className="flex flex-col max-w-[1400px] m-2">
@@ -169,22 +176,40 @@ export default function TaskPage() {
           </button>
         </div>
 
-        <div className="grid grid-cols-4 grid-rows-1 justify-center border border-[#6B7280] mb-2 rounded-md">
+        <div className="grid grid-cols-5 grid-rows-1 justify-center border border-[#6B7280] mb-2 rounded-md">
           <h4 className="text-center font-bold">Task name</h4>
           <h4 className="text-center font-bold">Date</h4>
           <h4 className="text-center font-bold">Due Date</h4>
+          <h4 className="text-center font-bold">Priority</h4>
           <h4 className="text-center font-bold">Status</h4>
         </div>
 
-        <div className="flex justify-center items-center h-[200px] border border-[#6B7280] rounded-md">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="flex items-center text-sm text-center bg-[#171717] border border-[#6B7280] p-2 rounded-md hover:bg-[#6B728030] cursor-pointer"
-          >
-            Add task
-          </button>
+        <div className="justify-between h-[500px] border border-[#6B7280] rounded-md">
+          {tasks.map((task) => (
+            <div
+              key={task.id}
+              className="grid grid-cols-5 grid-rows-1 justify-between items-center border-b border-[#6B7280] p-2"
+            >
+              <h3 className="text-center">{task.title}</h3>
+              <p className="text-center">{task.startDate}</p>
+              <p className="text-center">{task.dueDate}</p>
+              <p className="text-center">{task.priority}</p>
+              <p className="text-center">{task.status}</p>
+            </div>
+          ))}
         </div>
-        {isModalOpen && <AddTaskModal onClose={() => setIsModalOpen(false)} />}
+        {isModalOpen && (
+          <AddTaskModal
+            onClose={() => setIsModalOpen(false)}
+            onAddTask={handleAddTask}
+          />
+        )}
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="flex items-center text-sm text-center bg-[#171717] border border-[#6B7280] p-2 rounded-md hover:bg-[#6B728030] cursor-pointer"
+        >
+          Add task
+        </button>
       </div>
     </section>
   );
